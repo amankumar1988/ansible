@@ -7,3 +7,18 @@ Always go with latest version, which can be installed from tools/ansible/install
 #ansible -i inv all  --list-hosts --> to list all hosts
 
 # ANSIBLE PREDEFINED VARIABLES
+
+# ansible_user 
+#ansible_password 
+
+Variable should be passed to ansible by using the flag -e
+
+e.g. ansible -i Inv all -e ansible_user=username -e ansible_pass=pswd
+1000's of module available : -m shell, -m yum, -m service
+
+##### Ansible can be executed in 2 ways:
+1. Manual Approach : ansible command
+2. Automated Approach : ansible playbook
+
+## Automated approcah : This uses playbook
+Paybook are written in YAML
