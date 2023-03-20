@@ -1,0 +1,3 @@
+# When to use shell module
+- name: Demo on shell module
+  ansible.builtin.shell: uptime
