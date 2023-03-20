@@ -6,13 +6,15 @@
     - name: Printing the URL Task 
       ansible.builtin.debug:
         msg: The value of URL is {{URL}} 
+
     - name: Printing the URL from the Task 
       ansible.builtin.debug:
         msg: The value of URL is {{URL}} 
       vars:
         URL: task.google.com      #Task / Local Level Variable ; The scope of is it only this task 
+
     - name: Printing the URL from the Task 
       ansible.builtin.debug:
-        msg: {{URL}} 
+        msg: "{{URL}}"
       vars:
         URL: task.google.com  
