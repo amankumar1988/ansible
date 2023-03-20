@@ -9,3 +9,11 @@
   - name: Printing the Shell Output using OUT Variable
     ansible.builtin.debug:  
       msg: "{{OUT}}"  
+
+  - name: printing the exit code of the UPTIME command  
+    ansible.builtin.set_fact:
+      STATUS_CODE: "{{OUT.rc}}"
+
+  - name: Printing uptime exit code 
+    ansible.builtin.debug:  
+      msg: "{{OUT.rc}}"  
