@@ -10,5 +10,5 @@
       ansible.builtin.debug:
         msg: The value of URL is {{URL}}
       vars:
-        URL: play.google.com   # Task level variable, scope only in this task
+        URL: task.google.com   # Task level variable, scope only in this task
         
