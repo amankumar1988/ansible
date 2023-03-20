@@ -13,8 +13,23 @@
       vars:
         URL: task.google.com      #Task / Local Level Variable ; The scope of is it only this task 
 
-    - name: Printing the URL from the Task 
+    - name: Printing the URL
       ansible.builtin.debug:
         msg: "{{URL}}"
       vars:
         URL: task.google.com  
+
+    - name: Printing the value supplied from command line
+      ansible.builtin.debug:
+        msg: "{{CMD_URL}}"
+      vars:
+        URL: task.google.com  
+
+# $URL is bash is equivalent to {{URL}} in YAML 
+
+# Variable Precendence : 
+# CLI Variables  > Local Variables > Global Variables > File Variables > Prompt Variables 
+
+
+# When to specifically use Quites ? 
+# When you're printing only the variable then enclose them in the Double Quotes.
