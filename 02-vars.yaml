@@ -2,6 +2,7 @@
   hosts: all
   vars:
     URL: play.google.com      # Global variable
+  vars_files: demo-vars.yaml
   tasks:
     - name: Printing the URL Task 
       ansible.builtin.debug:
@@ -22,8 +23,11 @@
     - name: Printing the value supplied from command line
       ansible.builtin.debug:
         msg: "{{CMD_URL}}"
-      vars:
-        URL: task.google.com  
+
+    - name: Printing the value supplied from file
+      ansible.builtin.debug:
+        msg: "{{GAME_LIVES}}"
+ 
 
 # $URL is bash is equivalent to {{URL}} in YAML 
 
