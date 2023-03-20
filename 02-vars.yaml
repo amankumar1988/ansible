@@ -4,8 +4,8 @@
     URL: play.google.com      # Global variable
   vars_files: demo-vars.yaml
   vars_prompt:
-    - name: URL
-      prompt: Enter the url
+    - name: PURL
+      prompt: Enter the purl
       private: true
   tasks:
     - name: Printing the URL Task 
@@ -31,6 +31,10 @@
     - name: Printing the value supplied from file
       ansible.builtin.debug:
         msg: "{{GAME_LIVES}}"
+
+    - name: Printing prompt url  
+      ansible.builtin.debug:
+        msg: "{{PURL}}"
  
 
 # $URL is bash is equivalent to {{URL}} in YAML 
