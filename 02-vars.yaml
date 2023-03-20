@@ -1,9 +1,14 @@
 - name: Demo on using variable
   hosts: all
   vars:
-    URL: play.google.com
+    URL: play.google.com      # Global variable
   tasks:
     - name: printing the url tasks
       ansible.builtin.debug:
         msg: The value of URL is {{URL}}
+   - name: printing the url from task
+      ansible.builtin.debug:
+        msg: The value of URL is {{URL}}
+      vars:
+        URL: play.google.com   # Task level variable, scope only in this task
         
