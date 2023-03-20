@@ -6,6 +6,7 @@
   vars_prompt:
     - name: URL
       prompt: Enter the url
+      private: true
   tasks:
     - name: Printing the URL Task 
       ansible.builtin.debug:
