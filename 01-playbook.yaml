@@ -7,4 +7,12 @@
 
     - name: Print Hello from play1 of task2 
       ansible.builtin.debug:
-        msg: Hello from task1 of play2
+        msg: Hello from task2 of play1
+
+
+- name: Play2
+  hosts: dev    # Mention the name of the inventory group that you want this to be running against 
+  tasks:
+    - name: Print Hello from play2 of task1 
+      ansible.builtin.debug:
+        msg: Hello from task1 of play2 
