@@ -1,0 +1,11 @@
+# When to use shell module
+- name: Demo on registering variables
+  hosts: all    # Mention the name of the inventory group that you want this to be running against 
+  tasks:
+  - name: Demo on using Shell Module 
+    ansible.builtin.shell: uptime 
+    register: OUT 
+
+  - name: Printing the Shell Output using OUT Variable
+    ansible.builtin.debug:  
+      msg: "{{OUT}}"  
