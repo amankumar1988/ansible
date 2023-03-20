@@ -15,4 +15,4 @@
   tasks:
     - name: Print Hello from play2 of task1 
       ansible.builtin.debug:
-        msg: Hello from task1 of play2 
+        msg: Hello from task1 of play2
