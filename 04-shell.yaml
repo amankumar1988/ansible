@@ -1,3 +1,6 @@
 # When to use shell module
 - name: Demo on shell module
-  ansible.builtin.shell: uptime
+  hosts: all    # Mention the name of the inventory group that you want this to be running against 
+  tasks:
+    - name: Demo using shell module
+      ansible.builtin.shell: uptime
