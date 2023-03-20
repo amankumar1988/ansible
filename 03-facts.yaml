@@ -7,3 +7,6 @@
     - name: This is predefined variables gather by the facts
       ansible.builtin.debug:
         msg: Distribution of the machine {{ansible_distribution}}
+    - name: Printing the MAC of machine
+      ansible.builtin.debug:
+        msg: Distribution of the machine {{ansible_default_ipv4.macaddress}}
