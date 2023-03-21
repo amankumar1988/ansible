@@ -1,0 +1,8 @@
+- name: Demo on copy
+  hosts: all
+  become: yes  #privilege escalation
+  tasks:
+    - name: copy file
+      ansible.builtin.copy:
+       src: proxy.conf
+       dest: /home/centos/
