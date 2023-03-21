@@ -3,12 +3,12 @@
   tasks:
     - name: This is frontend tasks
       ansible.builtin.debug:  
-      msg: Installing frontend
+        msg: Installing frontend
 
     - name: This is Mongodb tasks
       ansible.builtin.debug:  
-      msg: Installing Mongodb
+        msg: Installing Mongodb
 
     - name: This is User tasks
       ansible.builtin.debug:  
-      msg: Installing User
+        msg: Installing User
