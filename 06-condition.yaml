@@ -4,9 +4,9 @@
     - name: Execute the tasks when server is CentOS
       ansible.builtin.debug:
         msg: Welcome to CentOS
-        When: ansible_distributio == "Centos"
+        When: ansible_distribution == "Centos"
 
     - name: Execute the tasks when server is Ubuntu
       ansible.builtin.debug:
         msg: Welcome to Ubuntu
-        When: ansible_distributio == "Ubuntu"
+        When: ansible_distribution == "Ubuntu"
