@@ -10,5 +10,13 @@
     ansible.builtin.debug:  
       msg: starging nginx on servers 
 
+  - name: Check user id
+    ansible.builtin.shell: id
+    register: OUT
+
+  - name: Printing
+    ansible.builtin.debug:  
+      msg: "{{OUT}}"
+
 
 # When a task fails, the playbook will be a failure and will stop all the subsequent plays 
