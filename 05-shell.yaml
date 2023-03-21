@@ -3,8 +3,12 @@
   tasks:
   - name: Check nginx running or not
     ansible.builtin.shell: ps -ef | grep nginx | grep -v grep
+    ignore_errors: yes
   
 
   - name: Starting nginx
     ansible.builtin.debug:  
       msg: starging nginx on servers 
+
+
+# When a task fails, the playbook will be a failure and will stop all the subsequent plays 
