@@ -15,5 +15,5 @@
 
     - name: Run an action
       ansible.builtin.debug:
-        msg: Welcome to Ubuntu
+        msg: Action is true
       when: action
