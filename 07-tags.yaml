@@ -19,4 +19,4 @@
     - name: This is DB tasks
       ansible.builtin.debug:  
         msg: Installing DB
-      tags: DB
+      tags: db 
