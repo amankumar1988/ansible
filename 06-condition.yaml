@@ -1,5 +1,7 @@
 - name: Demo on conditions
   hosts: all
+  vars:
+   action: true
   tasks:
     - name: Execute the tasks when server is CentOS
       ansible.builtin.debug:
@@ -10,3 +12,8 @@
       ansible.builtin.debug:
         msg: Welcome to Ubuntu
       when: ansible_distribution == "Ubuntu"
+
+    - name: Run an action
+      ansible.builtin.debug:
+        msg: Welcome to Ubuntu
+      when: action
