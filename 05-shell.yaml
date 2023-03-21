@@ -1,0 +1,10 @@
+- name: Checking service up or not
+  hosts: all    # Mention the name of the inventory group that you want this to be running against 
+  tasks:
+  - name: Check nginx running or not
+    ansible.builtin.shell: ps -ef | grep nginx | grep -v grep
+  
+
+  - name: Starting nginx
+    ansible.builtin.debug:  
+      msg: starging nginx on servers 
