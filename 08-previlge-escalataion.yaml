@@ -9,3 +9,12 @@
   - name: Printing
     ansible.builtin.debug:  
       msg: "{{OUT}}"
+
+  - name: check the user id
+    ansible.builtin.shell: id
+    register: OUT1
+    become_user: CentOS
+
+  - name: Printing
+    ansible.builtin.debug:  
+      msg: "{{OUT}}"
