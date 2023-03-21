@@ -1,6 +1,6 @@
 - name: Demo on installation
   hosts: all
-  become: yes
+  become: yes  #privilege escalation
   tasks:
     - name: Install package
       ansible.builtin.package:
