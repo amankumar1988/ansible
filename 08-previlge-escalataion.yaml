@@ -1,0 +1,11 @@
+- name: Demo on privilege escalation
+  hosts: all    # Mention the name of the inventory group that you want this to be running against
+  become: yes 
+  tasks:
+  - name: Check user id
+    ansible.builtin.shell: id
+    register: OUT
+
+  - name: Printing
+    ansible.builtin.debug:  
+      msg: "{{OUT}}"
