@@ -6,12 +6,29 @@
     name: nodejs
     state: present
 
-- name: Installing npm to generate modules
-  community.general.npm:
-    path: /home/{{APPUSER}}/{{COMPONENT}}/
+#- name: Installing npm to generate modules
+#  community.general.npm:
+#    path: /home/{{APPUSER}}/{{COMPONENT}}/
 
-# create user rol
+# create user role
+
+- name: Calling create user role
+  ansible.builtin.include_role:
+    name: common 
+    tasks_from: create-user
 
 # call download and extract
+
+- name: Calling download and extract
+  ansible.builtin.include_role:
+    name: common 
+    tasks_from: download
+
+# Call config service
+
+- name: Calling config service
+  ansible.builtin.include_role:
+    name: common 
+    tasks_from: config-svc
 
 # call configure service role
