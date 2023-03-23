@@ -40,6 +40,7 @@
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
 
+    
 - name: Restarting the service 
   ansible.builtin.systemd:
     state: restarted
