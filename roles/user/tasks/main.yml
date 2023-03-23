@@ -20,7 +20,7 @@
 
 - name: performing catalogue cleanup
   ansible.builtin.file:
-    path: /home/{{APPUSER}}/catalogue/
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
     state: absent
 
 - name: Copying catalogue to roboshop home directory
@@ -38,7 +38,7 @@
 - name: Copying systemd service
   ansible.builtin.copy:
     src: systemd.service
-    dest: /etc/systemd/system/catalogue.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
 
 - name: Restarting the service 
   ansible.builtin.systemd:
