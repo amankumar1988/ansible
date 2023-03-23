@@ -18,6 +18,6 @@
 
 - name: Starting Mongodb
   ansible.builtin.service:
-    name: mongod
+    name: redis
     state: restarted          
     enabled: yes
