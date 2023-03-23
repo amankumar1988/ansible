@@ -11,7 +11,7 @@
 
 - name: Copying catalogue to roboshop home directory
   ansible.builtin.copy:
-    src: /tmp/catalogue-main/
+    src: /tmp/{{COMPONENT}}-main/
     dest: /home/{{APPUSER}}/{{COMPONENT}}/
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
