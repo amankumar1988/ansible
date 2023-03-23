@@ -16,7 +16,7 @@
 
 - name: Copying frontend code
   ansible.builtin.copy:
-    src: /tmp/frontend-main/static
+    src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html
     remote_src: yes   #ensure your source copy is on the remote machine
 
