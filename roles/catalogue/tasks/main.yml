@@ -3,8 +3,9 @@
     
 - name: Installing nodejs 
   ansible.builtin.package:
-    name: nodejs 
+    name: nodejs
     state: present
+
 
 - name: Creating roboshop user
   ansible.builtin.user:
@@ -29,6 +30,11 @@
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
     remote_src: yes   #ensure your source copy is on the remote machine
+
+- name: Installing npm to generate modules
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
+
 
 - name: Copying systemd service
   ansible.builtin.copy:
