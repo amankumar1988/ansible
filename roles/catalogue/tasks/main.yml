@@ -5,9 +5,9 @@
   ansible.builtin.package:
     name: nodejs 
     state: present
-    
+
 - name: Creating roboshop user
   ansible.builtin.user:
-    name: roboshop
+    name: "{{APPUSER}}"
     comment: roboshop user account
 
