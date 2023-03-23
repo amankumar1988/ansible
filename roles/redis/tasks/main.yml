@@ -1,0 +1,23 @@
+- name: Copying redis Repo  
+  ansible.builtin.copy:
+    src: redis.repo
+    dest: /etc/yum.repos.d/redis.repo 
+
+
+- name: Installing Redis 
+  ansible.builtin.package:
+    name: redis-6.2.11 
+    state: present  
+
+
+- name: Updating the redis Visibility
+  ansible.builtin.replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Starting Mongodb
+  ansible.builtin.service:
+    name: mongod
+    state: restarted          
+    enabled: yes
