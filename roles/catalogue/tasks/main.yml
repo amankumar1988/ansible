@@ -29,3 +29,15 @@
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
     remote_src: yes   #ensure your source copy is on the remote machine
+
+- name: Copying systemd service
+  ansible.builtin.copy:
+    src: systemd.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: Restarting service
+  ansible.builtin.systemd:
+    name: "{{COMPONENT}}"
+    state: restarted 
+    daemon_reload: true        
+    enabled: yes
