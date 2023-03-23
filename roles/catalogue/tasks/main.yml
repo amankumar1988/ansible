@@ -35,15 +35,14 @@
   community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}/
 
-
 - name: Copying systemd service
   ansible.builtin.copy:
     src: systemd.service
     dest: /etc/systemd/system/catalogue.service
 
-- name: Restarting service
+- name: Restarting the service 
   ansible.builtin.systemd:
-    name: "{{COMPONENT}}"
-    state: restarted 
-    daemon_reload: true        
+    state: restarted
+    daemon_reload: true
     enabled: yes
+    name: "{{COMPONENT}}"
