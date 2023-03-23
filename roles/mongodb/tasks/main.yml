@@ -7,3 +7,16 @@
   ansible.builtin.package:
     name: mongodb-org 
     state: present  
+
+- name: Updating the MongoDB Visibility
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Starting Mongodb
+  ansible.builtin.service:
+    name: mongod
+    state: restarted          
+    enabled: yes
+
