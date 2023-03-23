@@ -7,8 +7,8 @@
     name: nodejs 
     state: present
 
-- name: Installing nginx 
+- name: Creating roboshop user
   ansible.builtin.user:
     name: roboshop
-    state: present
+    comment: roboshop user account
 
