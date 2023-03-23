@@ -6,3 +6,12 @@
     name: nodejs
     state: present
 
+- name: Installing npm to generate modules
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
+
+# create user rol
+
+# call download and extract
+
+# call configure service role

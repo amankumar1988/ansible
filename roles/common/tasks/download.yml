@@ -1,0 +1,18 @@
+- name: Download and extract frontend
+  ansible.builtin.unarchive:
+    src: https://github.com/stans-robot-project/catalogue/archive/main.zip
+    dest: /tmp
+    remote_src: yes  
+
+- name: performing catalogue cleanup
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/catalogue/
+    state: absent
+
+- name: Copying catalogue to roboshop home directory
+  ansible.builtin.copy:
+    src: /tmp/catalogue-main/
+    dest: /home/{{APPUSER}}/{{COMPONENT}}/
+    owner: "{{APPUSER}}"
+    group: "{{APPUSER}}"
+    remote_src: yes 
