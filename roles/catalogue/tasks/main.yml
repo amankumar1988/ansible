@@ -6,3 +6,9 @@
   ansible.builtin.package:
     name: nodejs 
     state: present
+
+- name: Installing nginx 
+  ansible.builtin.user:
+    name: roboshop
+    state: present
+
