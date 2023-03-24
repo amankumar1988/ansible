@@ -13,3 +13,10 @@
     name: mysqld
     state: started          
     enabled: yes
+
+
+- name: Loading the file from remote
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+  register: mysql_log
+  
