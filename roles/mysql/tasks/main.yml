@@ -14,17 +14,26 @@
     state: started          
     enabled: yes
 
-- name: Loading the file from remote
-  ansible.builtin.slurp:
-    src: /var/log/mysqld.log
-  register: mysql_log
+- name: Chec the default password
+  block:
+    - name : Get Mysql version with non-default credentials
+      community.mysql.mysq_info:
+        login_user: root
+        login_password: RoboShop@1
+        filter: version
 
-- name: Fetch the password
-  ansible.builtin.set_fact:
-      DEFAULT_PASSWORD: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join (' ') | split(' ') | last}}"
+  rescue:
+      - name: Loading the file from remote
+        ansible.builtin.slurp:
+          src: /var/log/mysqld.log
+        register: mysql_log
 
-- name: Change mysql password
-  ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD}}"
+      - name: Fetch the password
+        ansible.builtin.set_fact:
+            DEFAULT_PASSWORD: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join (' ') | split(' ') | last}}"
+
+      - name: Change mysql password
+        ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD}}"
   
-
+ # if anyo of the tasks failes in a block then only rescue will run
 
