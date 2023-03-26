@@ -34,12 +34,10 @@
     line: gid = {{APPUSERINFO.group}}
 
 
-- name: Install Application Dependencies
+- name: Install Application Dependencies 
   ansible.builtin.pip:
-    requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirement.txt
+    requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
     executable: pip3
-
-
 
 # Call config service
 
