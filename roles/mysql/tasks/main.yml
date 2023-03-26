@@ -36,6 +36,10 @@
 
     - name: Change mysql password
       ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD}}"
+
+- name: Removing the password vailate pluing
+  ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 
+  
   
  # if anyo of the tasks failes in a block then only rescue will run
 
