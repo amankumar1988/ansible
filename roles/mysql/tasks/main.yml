@@ -21,7 +21,7 @@
 
 - name: Read the file
   ansible.builtin.debug:
-    msg: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join (' ') |split('')}}"
+    msg: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join (' ') | split(' ')}}"
 
 # - name: Change mysql password
 #   ansible.builtin.shell:
