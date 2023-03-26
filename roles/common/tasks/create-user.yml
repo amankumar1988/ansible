@@ -7,14 +7,3 @@
 # - name: Printing iser for dedbuging
 #   ansible.builtin.debug:
 #     msg: "{{APPUSERINFO}}"
-
-- name: Fetch the UID and replace in the file
-  ansible.builtin.lineinfile:
-    path: /home/{{APPUSER}}/{{COMPONENT}}/{{PAYMENT}}.ini
-    regexp: '^uid'
-    line: udi = {{APPUSERINFO.group}}
-
-- name: Install Application Dependencies
-  ansible.builtin.pip:
-    name: /home/{{APPUSER}}/{{COMPONENT}}/requirement.txt
-    executable: pip3.3
