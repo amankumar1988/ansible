@@ -16,4 +16,5 @@
     dest: /home/{{APPUSER}}/{{COMPONENT}}/
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
-    remote_src: yes 
+    remote_src: yes
+  ignore_errors: yes
