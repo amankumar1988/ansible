@@ -24,3 +24,6 @@ mysql.roboshop.internal
 
 [rabbitmq]
 rabbitmq.roboshop.internal
+
+[payment]
+payment.roboshop.internal
