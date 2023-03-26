@@ -47,7 +47,7 @@
     tasks_from: download
 
 - name: Injecting the schema
-  ansible.builtin.mysql_db:
+  community.mysql.mysql_db:
     state: import
     name: all
     target: /tmp/mysql-main/shipping.sql
