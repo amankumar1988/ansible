@@ -38,7 +38,8 @@
       ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD}}"
 
 - name: Removing the password vailate pluing
-  ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 
+  ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1
+  ignore_errors: yes
 
 - name: Download the schema
   ansible.builtin.include_role:
