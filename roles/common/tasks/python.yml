@@ -23,7 +23,7 @@
 
 - name: Fetch the UID and replace in the file
   ansible.builtin.lineinfile:
-    path: /home/{{APPUSER}}/{{COMPONENT}}/{{PAYMENT}}.ini
+    path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: '^uid'
     line: uid = {{APPUSERINFO.uid}}
 
