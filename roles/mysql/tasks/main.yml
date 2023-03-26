@@ -14,21 +14,13 @@
     state: started          
     enabled: yes
 
-# - name: Check the default password
-#   block:
-#     - name: Get Mysql version with non-default credentials
-#       community.mysql.mysq_info:
-#         login_user: root
-#         login_password: RoboShop@1
-#         filter: version
-- name: Check the default password 
-  block: 
-    - name: Get MySQL version with non-default credentials
+- name: Check the default password
+  block:
+    - name: Get Mysql version with non-default credentials
       community.mysql.mysql_info:
-        login_user: root 
+        login_user: root
         login_password: RoboShop@1
         filter: version
-
 
   rescue:
     - name: Loading the file from remote
