@@ -27,9 +27,3 @@
 #   ansible.builtin.shell:
 
 
-  
-# - name: Declaring the facts
-#   ansible.builtin.set_facts:
-#     Default_password: "{{}}"
-
-
