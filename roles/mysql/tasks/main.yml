@@ -19,9 +19,9 @@
     src: /var/log/mysqld.log
   register: mysql_log
 
-- name: Read the file
-  ansible.builtin.debug:
-    msg: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join (' ') | split(' ') | last}}"
+- name: Fetch the password
+  ansible.builtin.set_facts:
+      DEFAULT_PASSWORD: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join (' ') | split(' ') | last}}"
 
 # - name: Change mysql password
 #   ansible.builtin.shell:
