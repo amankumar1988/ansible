@@ -14,9 +14,9 @@
     state: started          
     enabled: yes
 
-- name: Chec the default password
+- name: Check the default password
   block:
-    - name : Get Mysql version with non-default credentials
+    - name: Get Mysql version with non-default credentials
       community.mysql.mysq_info:
         login_user: root
         login_password: RoboShop@1
