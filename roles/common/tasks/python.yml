@@ -25,13 +25,13 @@
   ansible.builtin.lineinfile:
     path: /home/{{APPUSER}}/{{COMPONENT}}/{{PAYMENT}}.ini
     regexp: '^uid'
-    line: udi = {{APPUSERINFO.uid}}
+    line: uid = {{APPUSERINFO.uid}}
 
 - name: Fetch the GID and replace it in the file 
   ansible.builtin.lineinfile:
     path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: '^gid'
-    line: uid = {{APPUSERINFO.group}}
+    line: gid = {{APPUSERINFO.group}}
 
 
 - name: Install Application Dependencies
