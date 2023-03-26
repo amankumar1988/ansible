@@ -14,14 +14,14 @@
     state: started          
     enabled: yes
 
-# - name: Loading the file from remote
-#   ansible.builtin.slurp:
-#     src: /var/log/mysqld.log
-#   register: mysql_log
+- name: Loading the file from remote
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+  register: mysql_log
 
-# - name: Read the file
-#   ansible.builtin.debug:
-#     msg: "{{ mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') }}"
+- name: Read the file
+  ansible.builtin.debug:
+    msg: "{{ mysql_log['content'] | b64decode }}"
 
 # - name: Change mysql password
 #   ansible.builtin.shell:
