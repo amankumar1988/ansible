@@ -10,7 +10,7 @@
     state: absent
   ignore_errors: yes
 
-- name: Copying catalogue to roboshop home directory
+- name: Copying files to roboshop home directory
   ansible.builtin.copy:
     src: /tmp/{{COMPONENT}}-main/
     dest: /home/{{APPUSER}}/{{COMPONENT}}/
