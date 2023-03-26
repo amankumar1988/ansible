@@ -39,7 +39,19 @@
 
 - name: Removing the password vailate pluing
   ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 
-  
-  
+
+- name: Download the schema
+  ansible.builtin.include_role:
+    name: common 
+    tasks_from: download
+
+- name: Injecting the schema
+  ansible.builtin.mysql_db:
+    state: import
+    name: all
+    target: /tmp/mysql-main/shipping.sql
+    login_user: root
+    login_password: Roboshop@1
+
  # if anyo of the tasks failes in a block then only rescue will run
 
