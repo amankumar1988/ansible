@@ -46,13 +46,13 @@
     name: common 
     tasks_from: download
 
-- name: Injecting the schema
+- name: Injecting the schema 
   community.mysql.mysql_db:
     state: import
     name: all
-    target: /tmp/mysql-main/shipping.sql
+    target: /tmp/mysql-main/shipping.sql 
     login_user: root
-    login_password: Roboshop@1
+    login_password: RoboShop@1
 
  # if anyo of the tasks failes in a block then only rescue will run
 
