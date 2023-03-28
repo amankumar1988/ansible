@@ -24,6 +24,7 @@
   ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+  notify: Restart Nginx   # whenever there is change in file, only during the time this handlers will be called
 
 - name: Restarting nginx
   ansible.builtin.service:
