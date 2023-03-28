@@ -24,6 +24,12 @@
     name: common 
     tasks_from: download
 
+#performing NPM install 
+
+- name: Doing NPM install
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
+
 # Call config service
 
 - name: Calling config service
