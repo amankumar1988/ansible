@@ -26,6 +26,7 @@
     dest: /etc/nginx/default.d/roboshop.conf
   notify: Restart Nginx   # whenever there is change in file, only during the time this handlers will be called
 
+# Notify is the way to call a handler , handler will be executed when there is a change in the tasks
 - name: Start nginx
   ansible.builtin.service:
     name: nginx
