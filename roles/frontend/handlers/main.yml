@@ -1,3 +1,4 @@
+# You can add n number of handlers and each and every handler should have a unique name
 - name: Restart Nginx 
   ansible.builtin.service:
     name: nginx
