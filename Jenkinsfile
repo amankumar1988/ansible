@@ -1,7 +1,7 @@
 pipeline{
-    agent { label 'ws'}
-        environment{
-        SSH_CREDENTIALS = credentials('SSH_CRED')
+    agent { label 'ws' }
+    environment { 
+        SSH_CREDENTIALS = credentials('SSH_CRED') 
     }
     stages{
         stage('Performing Ansible Dry RUn'){
