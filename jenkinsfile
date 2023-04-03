@@ -1,0 +1,10 @@
+pipeline{
+    agent { label 'ws'}
+    stages{
+        stage('Performing Ansible Dry RUn'){
+            steps{
+                sh "ansible-playbook robot-dryrun.yaml -e COMPONENT=mongodb -e ansible_user=centos -e ansible_password=xyz123 -e ENV=qa"
+            }
+        }
+    }
+}
