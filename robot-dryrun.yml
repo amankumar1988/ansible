@@ -1,11 +1,12 @@
 # This playbook creates an instance, runs the playbook and then terminates the instance 
+# Ensure you create and AMI from server that has ANSIBLE Installed
 - name: Creating EC2 for DryRun
   hosts: localhost
   gather_facts: False
   vars:
     instance_type: "t3.micro"
-    security_group_id: "sg-000671b0e1fb3d069"  # Update as per your security group id
-    image: "ami-00ff427d936335825"             # Update this with the AMI ID in your account which has ansible installed.
+    security_group_id: "sg-0cbaa0f1408b614ce"  # Update as per your security group id
+    image: "ami-0a9cc4127e9bdf735"             # Update this with the AMI ID in your account which has ansible installed.
     region: "us-east-1"
   tasks:
     - name: Launching instance
@@ -17,7 +18,7 @@
          wait: true
          region: "{{ region }}"
          instance_tags:
-          Name: ansible-drurun
+          Name: ansible-dryrun
       register: ec2
 
     - name: Adding instance to the host group
