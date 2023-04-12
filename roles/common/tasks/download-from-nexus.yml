@@ -1,11 +1,11 @@
 - name: Performing Cleanup of Old VERSION
-  ansible.buitin.file:
+  ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}/ 
     state: absent 
   ignore_errors: yes
 
 - name: Create {{COMPONENT}} Home directory
-  ansible.buitin.file:
+  ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}/ 
     state: directory
     mode: '0755'
