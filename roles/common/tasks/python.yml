@@ -15,10 +15,10 @@
 
 # call download and extract
 
-- name: Calling download and extract
+- name: Calling download and extract role from common
   ansible.builtin.include_role:
     name: common 
-    tasks_from: download
+    tasks_from: download-from-nexus
 
 
 - name: Fetch the UID and replace in the file
