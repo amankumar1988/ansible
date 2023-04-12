@@ -21,6 +21,12 @@
 #     dest: /usr/share/nginx/html
 #     remote_src: yes   #ensure your source copy is on the remote machine
 
+- name: Download and extarct from the Nexus
+  ansible.buitlin.unarchive:
+    src: http://172.31.8.18:8081/repository/{{COMPONENT}}/{{COMPONENT}}-0.0.1.zip
+    dest: /usr/local/bin
+    remote_src:
+
 - name: Copying Roboshop Proxy Config 
   ansible.builtin.template:
     src: roboshop.conf
