@@ -25,7 +25,7 @@
   ansible.builtin.unarchive:
     src: http://172.31.8.18:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{VERSION}}.zip
     dest: /usr/share/nginx/html
-    remote_src:
+    remote_src: yes
 
 - name: Copying Roboshop Proxy Config 
   ansible.builtin.template:
