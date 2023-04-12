@@ -9,16 +9,17 @@
     dest: /tmp
     remote_src: yes   
 
-- name: performing frontend cleanup
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
+# Uncomment this when you don'nt have nexus or when you wish to download from the Nexus
+# - name: performing frontend cleanup
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: absent
 
-- name: Copying frontend code
-  ansible.builtin.copy:
-    src: /tmp/frontend-main/static/
-    dest: /usr/share/nginx/html
-    remote_src: yes   #ensure your source copy is on the remote machine
+# - name: Copying frontend code
+#   ansible.builtin.copy:
+#     src: /tmp/frontend-main/static/
+#     dest: /usr/share/nginx/html
+#     remote_src: yes   #ensure your source copy is on the remote machine
 
 - name: Copying Roboshop Proxy Config 
   ansible.builtin.template:
