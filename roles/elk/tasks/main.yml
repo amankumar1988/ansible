@@ -10,12 +10,12 @@
     dest: /etc/logstash/conf.d/logstash.conf
   notify: Restart logstash   # whenever there is change in file, only during the time this handlers will be called
 
-- name: Start Logstash
+- name: Restarting Logstash 
   ansible.builtin.systemd:
-    name: logstash
     state: restarted
-    daemon_reload: yes         
-    enabled: yes
+    name: logstash
+    daemon_reload: yes
+    enabled: true 
 
 - name: Wait for logstash port to come in listening stage
   ansible.builtin.wait_for:
