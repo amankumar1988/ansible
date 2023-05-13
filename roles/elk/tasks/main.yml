@@ -13,7 +13,8 @@
 - name: Start Logstash
   ansible.builtin.service:
     name: logstash
-    state: restarted         
+    state: restarted
+    daemon_reload: yes         
     enabled: yes
 
 - name: Wait for logstash port to come in listening stage
