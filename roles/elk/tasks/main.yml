@@ -11,7 +11,7 @@
   notify: Restart logstash   # whenever there is change in file, only during the time this handlers will be called
 
 - name: Start Logstash
-  ansible.builtin.service:
+  ansible.builtin.systemd:
     name: logstash
     state: restarted
     daemon_reload: yes         
