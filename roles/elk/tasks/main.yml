@@ -7,7 +7,7 @@
 - name: Copying LogstashConfig 
   ansible.builtin.template:
     src: logstash.conf
-    dest: /etc/logstash/logstash.conf
+    dest: /etc/logstash/conf.d/logstash.conf
   notify: Restart logstash   # whenever there is change in file, only during the time this handlers will be called
 
 - name: Start Logstash
