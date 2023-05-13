@@ -1,15 +1,16 @@
 filebeat.inputs:
 - type: log
   enabled: true
-{% if LOGTYPE == "json" %}
-  json.keys_under_root: true  # This should only be there if the Logtype is JSON
-{% endif %}
-  paths:
-    - "{{LOGLOCATION}}"
+  json.keys_under_root: true
+# {% if LOGTYPE == "json" %}
+#   json.keys_under_root: true  # This should only be there if the Logtype is JSON
+# {% endif %}
+#   paths:
+#     - "{{LOGLOCATION}}"
 
   fields:
-   component: "{{COMPONENT}}"
-  #  logtype: "{{LOGTYPE}}"
+   component: cart
+   logtype: json
 
 # ============================== Filebeat modules ==============================
 
