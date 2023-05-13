@@ -1,6 +1,7 @@
 # Tast 1 : Copy the logstash config file from the logstash srever and put it in the templates
 # Task 2 : Copy that templat to the logstash server after doing changes
 # Task 3 : Restart the logstash server and wait till logstash comes up.
+# Task 4 : Tag the input as JSON buy our logstash
 
 
 - name: Copying LogstashConfig 
