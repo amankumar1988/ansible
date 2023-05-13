@@ -1,0 +1,16 @@
+# Tast 1 : Copy the logstash config file from the logstash srever and put it in the templates
+# Task 2 : Copy that templat to the logstash server after doing changes
+# Task 3 : Restart the logstash server and wait till logstash comes up.
+
+
+- name: Copying LogstashConfig 
+  ansible.builtin.template:
+    src: logstash.conf
+    dest: /etc/logstash/logstash.conf
+  notify: Restart logstash   # whenever there is change in file, only during the time this handlers will be called
+
+- name: Start Logstash
+  ansible.builtin.service:
+    name: logstash
+    state: restarted         
+    enabled: yes
