@@ -1,1 +1,3 @@
 COMPONENT: frontend
+LOGLOCATION: /var/log/nginx/access.log
+LOGTYPE: raw

@@ -1,1 +1,3 @@
 APPUSER: roboshop
+LOGLOCATION: /var/log/user.log
+LOGTYPE: json
