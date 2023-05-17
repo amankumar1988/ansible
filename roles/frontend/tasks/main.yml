@@ -36,5 +36,10 @@
 - name: Start nginx
   ansible.builtin.service:
     name: nginx
-    state: started         
+    state: restarted         
     enabled: yes
+
+- name: Installing filebeat          # This will install beats on all the servers.
+  ansible.builtin.include_role:
+    name: elk 
+    tasks_from: filebeat

@@ -1,0 +1,11 @@
+- name: Copying rsyslog config
+  ansible.builtin.template:
+    src: rsyslog.conf
+    dest: /etc/rsyslog.d/rsyslog.conf
+
+- name: Restarting rsyslog 
+  ansible.builtin.systemd:
+    name: rsyslog
+    state: restarted
+    daemon_reload: yes
+    enabled: true 
